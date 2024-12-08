@@ -9,6 +9,10 @@ class Policy2314047(Policy):
         self.cur_prod_idx = -1
 
     def get_action(self, observation, info):
+        if info["filled_ratio"] == 0.0:
+            self.cur_stock_idx = -1
+            self.cur_prod_idx = -1
+            
         sorted_prod = sorted(enumerate(observation["products"]), 
                                 key=lambda p: p[1]["size"][0] * p[1]["size"][1], 
                                 reverse=True)
