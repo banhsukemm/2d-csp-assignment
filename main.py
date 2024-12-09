@@ -27,7 +27,7 @@ if __name__ == "__main__":
         for prod in observation["products"]:
             demands += prod["quantity"]
         print("Demands: ", demands)
-        time.sleep(2.5)
+        print(observation)
         for _ in range(demands):
             action = policy2210xxx.get_action(observation, info)
             observation, reward, terminated, truncated, info = env.step(action)
