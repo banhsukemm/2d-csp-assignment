@@ -92,8 +92,7 @@ class Policy2314047(Policy):
             if info["filled_ratio"] == 0.0:
                 self.cur_stock_idx = -1
                 self.solution = []
-
-            # Sắp xếp các stock theo kích thước giảm dần
+                
             sorted_stock = sorted(
                 enumerate(observation["stocks"]),
                 key=lambda s: self._get_stock_size_(s[1])[0] * self._get_stock_size_(s[1])[1],
